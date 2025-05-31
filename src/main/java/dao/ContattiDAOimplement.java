@@ -1,12 +1,18 @@
 package dao;
-import model.Contatto;
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
 import db.Connessione;
+import model.Contatto;
 public class ContattiDAOimplement implements ContattiDAO {
 	
 	private LinkedList<Contatto> contatti;
-	
+	@Override
 	public void addContatto(Contatto c) {
 		try {
 			Connection conn = Connessione.getInstance().getConnection();
@@ -25,6 +31,7 @@ public class ContattiDAOimplement implements ContattiDAO {
 		}
 	}
 	
+	@Override
 	public List<Contatto> getContatti(){
 		contatti = new LinkedList<>();
 		try {
