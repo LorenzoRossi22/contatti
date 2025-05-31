@@ -42,7 +42,10 @@ public class ContattiDAOimplement implements ContattiDAO {
 				String numero = rs.getString("numero");
 				String email = rs.getString("email");
 				int id = rs.getInt("id");
-				contatti.add(new Contatto(nome,numero,email,id));
+				Contatto c = new Contatto(nome,numero,email,id);
+				if(!contatti.contains(c)) {
+					contatti.add(c);
+				}
 			}
 			return contatti;
 		} catch (SQLException e) {
