@@ -91,6 +91,4 @@ public class Contatto {
 		Contatto other = (Contatto) obj;
 		return id == other.id;
 	}
-	
-	
 }
