@@ -9,7 +9,7 @@ import java.util.List;
 
 import db.Connessione;
 import model.Contatto;
-public class ContattiDAOimplement implements ContattiDAO {
+public class ContattiDAOImplement implements ContattiDAO {
 	
 	private LinkedList<Contatto> contatti;
 	@Override
@@ -19,7 +19,7 @@ public class ContattiDAOimplement implements ContattiDAO {
 			String nome = c.getNome();
 			String numero = c.getNumero();
 			String email = c.getEmail();
-			String query = "INSERT INTO dao (nome, telefono, email) VALUES (?, ?, ?)";
+			String query = "INSERT INTO contatti (nome, numero, email) VALUES (?, ?, ?)";
 			PreparedStatement stmt = conn.prepareStatement(query);
 			stmt.setString(1, nome);
 			stmt.setString(2, numero);

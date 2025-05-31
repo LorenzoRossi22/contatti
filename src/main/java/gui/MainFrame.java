@@ -1,6 +1,7 @@
 package gui;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class MainFrame extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -14,11 +15,10 @@ public class MainFrame extends JFrame {
         this.setSize(400, 200);
         this.setLocationRelativeTo(null);
         this.setLayout(new GridLayout(4, 2, 5, 5)); // 3 righe input + 1 bottone
-
+        
         labels = new JLabel[3];
         fields = new JTextField[3];
         addButton = new JButton("Submit");
-
         labels[0] = new JLabel("Enter name:");
         labels[1] = new JLabel("Enter numero:");
         labels[2] = new JLabel("Enter email:");
@@ -28,7 +28,8 @@ public class MainFrame extends JFrame {
             this.add(labels[i]);
             this.add(fields[i]);
         }
-
+        ActionListener a = new AddButtonListener(this,fields);
+        addButton.addActionListener(a);
         // spazio vuoto per allineare il bottone a destra
         this.add(new JLabel(""));
         this.add(addButton);
