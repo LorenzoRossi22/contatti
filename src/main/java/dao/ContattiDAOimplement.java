@@ -25,7 +25,6 @@ public class ContattiDAOimplement implements ContattiDAO {
 			stmt.setString(2, numero);
 			stmt.setString(3, email);
 			stmt.executeUpdate();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
